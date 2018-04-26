@@ -19,6 +19,9 @@ gem 'therubyracer'
 # Use Uglifier as compressor for JavaScript assets
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'uglifier', '>= 1.3.0'
+
+gem 'haml'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 #
@@ -28,6 +31,11 @@ gem 'kaminari-bootstrap'
 
 # Controller actions je nach COntent type
 gem "responders"
+
+# Login and User Management
+gem 'devise'
+gem 'devise-i18n'
+gem 'rails-i18n'
 
 gem 'jquery-rails'
 
@@ -58,6 +66,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'letter_opener_web', '~> 1.0'
 
 end
 

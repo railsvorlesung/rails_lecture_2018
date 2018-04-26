@@ -18,10 +18,21 @@
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
         My first Blog
-        <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
       </a>
+      <%= link_to 'log out', destroy_user_session_path, method: :delete %>
     </nav>
     <div class="container-fluid">
+      <div class="row">
+        <% if notice.present? %>
+          <% flash_as_array(notice).each do |msg| %>
+          <div class="alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <%= msg %>
+          </div>
+          <% end %>
+        <% end %>
+        <p class="alert"><%= alert %></p>
+      </div>
       <div class="row">
         <%= yield %>
       </div>
