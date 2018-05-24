@@ -10,3 +10,4 @@
 20.times do
   FactoryBot.create(:blog_post)
 end
+User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -21,6 +21,13 @@ paas.anynines.com
 * [Reguläre Ausdrücke](http://rubular.com/)
 * [API-Doc](apidock.com)
 * [12 Factor Manifesto](https://12factor.net/de/)
+* [API-Doc Suche für Gems](http://www.rubydoc.info/)
+
+# CloudFoundry
+
+* paas.anynines.com (Bei registrierung Email an die Vorlesungsadresse mit eurer Restrierungsemail, sodass wir die Trial verlängern können)
+
+* https://github.com/cloudfoundry/cli
 
 
 # Nützliche Gems
@@ -30,6 +37,10 @@ paas.anynines.com
  * omniauth
 
 * envyable (ENV-Variablen lokal konfigurieren)
+* active_admin 
+* prawn (PDF Generierung)
+* holidays (Feiertage erkennen)
+* icalendar (ical-Format Generierung)
 
 ## Übesetzungen
 
@@ -39,6 +50,7 @@ paas.anynines.com
 # Javascript Libraries
 
 * jFlot (Chart Plotting)
+* simple-mds (https://github.com/sparksuite/simplemde-markdown-editor)
 
 
 # Auto-Migration

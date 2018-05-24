@@ -1,0 +1,8 @@
+%h2= t('.posts_title')
+
+.container
+  .row
+    = paginate @posts 
+  = render partial: 'posts_table', locals: {blog_posts: @posts}
+  .row
+    = paginate @posts 

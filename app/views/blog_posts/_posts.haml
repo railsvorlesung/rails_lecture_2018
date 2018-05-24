@@ -1,0 +1,22 @@
+- @posts.each do |post| 
+  .row.blog-post-entry{id: dom_id(post)}
+    .col
+      %h4
+        = l(post.created_at, format: :short) 
+        = post.title 
+        = link_to edit_blog_post_path(post) do 
+          %span.glyphicon.glyphicon-pencil{'aria-hidden' => "true"}
+    .col
+      .container
+        .row
+          .col-md-2
+            - if post.image.attachment.present?
+              %img.thumbnail{src: url_for(post.image.variant(resize: '120x120'))}
+            - else
+              %img.thumbnail{src: 'http://via.placeholder.com/120x120'}
+          .col-md-6
+            = truncate(markdown(post.body), length: 250) do 
+              = link_to( t('blog_posts.index.show_blog_post'), blog_post_path(post.id), class: 'btn btn-primary')
+        .row
+          %hr
+          = link_to 'Download', pdf_blog_post_path(post.id), class: 'btn' 

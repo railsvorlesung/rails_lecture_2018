@@ -1,5 +1,7 @@
 {
   "name": "my_first_blog",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "simplemde": "^1.11.2"
+  }
 }

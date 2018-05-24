@@ -1,0 +1,15 @@
+.row
+  %table.table.table-striped
+    %tr
+      %th= BlogPost.human_attribute_name(:title)
+      %th= BlogPost.human_attribute_name(:created_at)
+      %th= t('actions')
+    - blog_posts.each do |post|
+      %tr{class: cycle('even', 'odd')}
+        %td= post.title
+        %td= l(post.created_at)
+        %td
+          = link_to t('edit'), edit_blog_post_path(post, locale: I18n.locale)
+          = link_to t('blog_posts.index.show_blog_post'), blog_post_path(post, locale: I18n.locale)
+          = link_to 'Download', pdf_blog_post_path(post.id, locale: I18n.locale), class: 'btn'
+

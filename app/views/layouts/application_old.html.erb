@@ -15,10 +15,14 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-default">
+
+      <a class="navbar-brand" href="/">
         My first Blog
       </a>
+      <%= link_to 'EN', locales_path(locale: :en), method: :patch %>
+      <%= link_to 'DE', locales_path(locale: :de), method: :patch %>
+      <%= image_tag(asset_path('Daily-Boxes-2-300px.png')) %>
       <%= link_to 'log out', destroy_user_session_path, method: :delete %>
     </nav>
     <div class="container-fluid">
@@ -31,7 +35,15 @@
           </div>
           <% end %>
         <% end %>
-        <p class="alert"><%= alert %></p>
+        <%# flash[:alert] %>
+        <% if alert.present? %>
+          <% flash_as_array(alert).each do |msg| %>
+          <div class="alert alert-danger alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <%= msg %>
+          </div>
+          <% end %>
+        <% end %>
       </div>
       <div class="row">
         <%= yield %>

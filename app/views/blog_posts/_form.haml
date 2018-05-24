@@ -1,0 +1,24 @@
+
+.container
+  .row
+    .col-md-2
+    .col-md-6
+      = form_for(@post) do |f|
+        .form-group
+          = f.text_field :title, size: 45
+        .form-group
+          = f.text_area :body, cols: 45, rows: 30, class: 'markdown-editor-wysiwyg'
+        .form-group
+          = f.label :public
+          = f.check_box :public
+        .form-group
+          .container
+            .row
+              .col-md-1
+                - if @post.image.attachment.present?
+                  %img{src: url_for(@post.image.variant(resize: "100x100"))}
+              .col-md-6
+                = f.file_field :image
+        .form-group
+          = f.submit
+

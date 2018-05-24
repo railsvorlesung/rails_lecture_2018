@@ -3,6 +3,6 @@
 <h1><%= @post.title %></h1>
 
 <div class="well">
-  <%=  @post.body %>
+  <%= markdown(@post.body) %>
 </div>
 <%= link_to t('back'), :back %>

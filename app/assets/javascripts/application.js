@@ -12,7 +12,46 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+// require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+//
+
+
+jQuery(document).ready(function() {
+  jQuery('.markdown-editor-wysiwyg').each(function(index, element) {
+    new SimpleMDE({ element: element });
+  })
+
+  jQuery('img#zoom').hover(function() {
+    jQuery(this).stop();
+    jQuery(this).animate({
+      height: '300px',
+      width:  '300px',
+      opacity: 0.8
+    }, 250);
+  }, function() {
+    jQuery(this).stop();
+    jQuery(this).animate({
+      height: '70px',
+      width:  '70px',
+      opacity: 1.0
+    }, 250);
+  });
+
+
+  jQuery('.blog-post-entry').hover( function(){
+    console.log(this);
+    jQuery(this).stop();
+    jQuery(this).animate({
+      marginLeft: '-25px'
+    }, 65);
+
+  }, function(){
+    jQuery(this).stop();
+    jQuery(this).animate({
+      marginLeft: '-15px'
+    } ,125);
+  });
+});

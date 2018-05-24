@@ -1,0 +1,24 @@
+<!doctype html>
+%html{lang: "en"}
+  = render partial: 'layouts/head'
+  %body
+    .container-fluid
+      .row
+        .col-md-12#skip-navbar
+      .row
+        - if notice.present? 
+          - flash_as_array(notice).each do |msg| 
+            .alert.alert-success.alert-dismissible{role: "alert"}
+              %button.close{type: "button", 'data-dismiss' => "alert", 'aria-label'=>"Close"}
+                %span{'aria-hidden'=>"true"}
+                  &times;
+            = msg 
+        - if alert.present? 
+          - flash_as_array(alert).each do |msg| 
+            .alert.alert-danger.alert-dismissible{role: "alert"}
+              %button.close{type:"button", 'data-dismiss' => "alert", "aria-label" =>"Close"}
+                %span{"aria-hidden" => true}
+                  &times;
+            = msg 
+      .row
+        = yield 

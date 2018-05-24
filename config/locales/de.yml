@@ -1,0 +1,19 @@
+de:
+  edit: 'Ändern'
+  actions: 'Aktionen'
+  success: 'Erfolgreich gespeichert'
+  blog_posts:
+    index:
+      show_blog_post: 'Vollständigen Artikel anzeigen'
+    edit:
+      title: "Blog-Post: %{title}"
+  activerecord:
+    models:
+      blog_post: 
+        one: 'Blog-Post'
+        other: 'Blog-Posts'
+    attributes:
+      blog_post:
+        title:  'Titel'
+        created_at: 'Erstellt am'
+        public: 'Öffentlich'

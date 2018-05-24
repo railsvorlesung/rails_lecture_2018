@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.4.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+gem 'pg'
 gem 'mysql2'
 
 # Use Puma as the app server
@@ -21,11 +22,24 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'haml'
+gem 'redcarpet'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 #
-# Pagination mit BOostrap Styling
+
+gem 'rest-client'
+
+# Image Transformation
+gem 'mini_magick'
+
+# PDF 
+gem 'prawn'
+
+# Admin Backend
+gem 'activeadmin'
+
+# Pagination mit Boostrap Styling
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 
@@ -34,6 +48,8 @@ gem "responders"
 
 # Login and User Management
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
 gem 'devise-i18n'
 gem 'rails-i18n'
 
@@ -62,6 +78,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'envyable', require: 'envyable/rails-now'
+
+  gem 'guard-rspec'
+
+  # Bessere Fehlermeldungen mit Konsole
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
   gem 'factory_bot_rails'
   gem 'faker'

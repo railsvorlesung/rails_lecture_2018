@@ -1,0 +1,13 @@
+
+
+- form_for 'names', url: names_path do | f|
+  = f.text_field :name
+
+.container
+  .row
+    .col-md-2
+      = @names[:name]
+    .col-md-6
+      - @names[:countries].each do |country|
+        = country
+

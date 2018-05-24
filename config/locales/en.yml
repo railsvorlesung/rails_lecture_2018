@@ -32,6 +32,11 @@
 en:
   hello: "Hello world"
 
+  blog_posts:
+    index:
+      show_blog_post: 'Read full article'
+    edit:
+      title: "Blog post: %{title}"
   posts:
     index:
       posts_title: 'All Posts'

@@ -1,0 +1,17 @@
+%nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{href: "/"}
+        My first Blog
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'EN', locales_path(locale: :en), method: :patch 
+        %li
+          = link_to 'DE', locales_path(locale: :de), method: :patch 
+    .collapse.navbar-collapse.pull-right
+      .navbar-header
+        %a.navbar-brand{href: 'javascript:;'}
+          %img.thumbnail#zoom{src: asset_path('Daily-Boxes-2-300px.png')} 
+        %ul.nav.navbar-nav
+          %li
+            = link_to 'log out', destroy_user_session_path, method: :delete 
