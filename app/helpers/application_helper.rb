@@ -12,5 +12,9 @@ module ApplicationHelper
     end
   end # #flash_as_array
 
+  def object_new?(form)
+    return !form.object.persisted?
+  end # #object_new?
+
 
 end

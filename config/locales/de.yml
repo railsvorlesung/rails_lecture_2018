@@ -2,6 +2,8 @@ de:
   edit: 'Ändern'
   actions: 'Aktionen'
   success: 'Erfolgreich gespeichert'
+  chapter_review_mailer:
+    ask_for_review: 'Bitte lies das Kapitel %{title} korrektur'
   blog_posts:
     index:
       show_blog_post: 'Vollständigen Artikel anzeigen'

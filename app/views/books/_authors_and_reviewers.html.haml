@@ -1,0 +1,13 @@
+
+.row
+  .col-md-6
+    %h5= BookChapter.human_attribute_name(:authors)
+    %ul
+      - chapter.authors.each do |author|
+        %li= author.email
+
+  .col-md-6
+    %h5= BookChapter.human_attribute_name(:reviewers)
+    %ul
+      - chapter.reviewers.each do |reviewer|
+        %li= reviewer.email

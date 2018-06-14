@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_locale
-    I18n.locale = params.permit(:locale)[:locale] || :en
+    cookies['locale'] = params.permit(:locale)[:locale]  if params.permit(:locale)[:locale].present?
+    I18n.locale       = cookies['locale'] || :en
   end # #set_locale
 
 end

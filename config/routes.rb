@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+  resources :book_chapters
+  resources :books
   devise_for :users
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #
   #
 
+  resources :reviews, only: [] do
+    collection do
+      post :request
+      post :inform_authors
+    end
+  end
 
   scope('(/:locale)') do
     resources :blog_posts do
@@ -23,5 +31,5 @@ Rails.application.routes.draw do
 
   root 'blog_posts#index'
 
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" 
 end

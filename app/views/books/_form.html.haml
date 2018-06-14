@@ -1,0 +1,40 @@
+.container
+  .row
+    = simple_form_for(book) do |f|
+      .col-sm-5
+        - if book.errors.any? 
+          .error_explanation
+            %h2
+              = pluralize(book.errors.count, "error")  
+              prohibited this book from being saved:
+            %ul
+              - book.errors.full_messages.each do |message| 
+                %li
+                  = message
+        = f.input :title
+        = f.input :summary
+
+      .col-sm-5
+        %fieldset.chapters
+          %legend
+            = BookChapter.model_name.human(count: 2)
+          = f.simple_fields_for(:book_chapters) do |fields|
+            %div{class: object_new?(fields) ? 'new-chapter' : nil}
+              - if object_new?(fields)
+                .badge New
+              .row
+                .col-sm-9
+                  = fields.input :title, label: false
+                  = fields.association :authors, label_method: :email
+                  = fields.association :reviewers, label_method: :email
+                .col-sm-1
+                  = fields.input '_destroy', as: :hidden, input_html: {value: 'true'}, disabled: true
+                  = link_to('javascript:;', class: 'remove-chapter btn btn-danger') do
+                    %span.glyphicon.glyphicon-minus
+        .row
+          .col-sm-6
+            = f.button :submit
+          .col-sm-6
+            .pull-right
+              = link_to('javascript:;', id: 'add-new-chapter' ,class: 'btn btn-success') do
+                %span.glyphicon.glyphicon-plus

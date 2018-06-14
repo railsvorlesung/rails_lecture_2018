@@ -32,6 +32,8 @@
 en:
   hello: "Hello world"
 
+  chapter_review_mailer:
+    ask_for_review: 'Please review the chapter %{title}'
   blog_posts:
     index:
       show_blog_post: 'Read full article'

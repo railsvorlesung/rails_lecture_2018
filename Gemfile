@@ -24,6 +24,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'haml'
 gem 'redcarpet'
 
+# EU Cookie Law
+gem 'cookieconsent'
+
+# Simple Form
+gem 'simple_form'
+
+gem 'flag_shih_tzu'
+gem 'aws-sdk-s3'
+
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 #
@@ -75,12 +85,15 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'letter_opener_web', '~> 1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'envyable', require: 'envyable/rails-now'
 
   gem 'guard-rspec'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers'
 
   # Bessere Fehlermeldungen mit Konsole
   gem 'better_errors'
@@ -89,8 +102,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'letter_opener_web', '~> 1.0'
 
+  gem 'database_cleaner'
 end
 
 group :development do

@@ -18,6 +18,7 @@
 !/tmp/.keep
 config/env.yml
 
+secret
 # Ignore uploaded files in development
 /storage/*
 

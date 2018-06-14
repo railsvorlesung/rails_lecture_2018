@@ -2,6 +2,8 @@
 
 .container
   .row
+    = link_to t('create'), new_blog_post_path 
+  .row
     = paginate @posts 
   = render partial: 'posts_table', locals: {blog_posts: @posts}
   .row

@@ -1,7 +1,7 @@
 applications:
 - name: ror-2018
-  instances: 1 # the number of instances to start
   buildpack: ruby_buildpack
   services:
     - ror-2018-blog
+
 

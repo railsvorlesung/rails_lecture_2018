@@ -75,7 +75,7 @@ Rake::Task['db:migrate'].invoke
  * 1:n
  * m:n
 * Verwendung eines Custom-Mailers
- * Verwendung des letter opener gems bei der lokalen Entwicklung (nicht in production)
+ * Verwendung des letter opener gems bei der lokalen Entwicklung (nicht ohne PW in production)
 * Devise-Authentifizierung mit opt-in (Bestätigung der E-Mail Adresse)
  * Omniauth pur auch okay
 * Layout basierend auf Twitter-Bootstrap und verwendet die Bootstrap-Elemente wie vom Framework vorgesehen

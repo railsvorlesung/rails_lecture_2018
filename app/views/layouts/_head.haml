@@ -7,6 +7,26 @@
 
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' 
   = javascript_include_tag 'application', 'data-turbolinks-track': 'reload' 
+  :javascript
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#eaf7f7",
+          "text": "#5c7291"
+        },
+        "button": {
+          "background": "#56cbdb",
+          "text": "#ffffff"
+        }
+      },
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "http://cookies.insites.com/about-cookies"
+      }
+    })});
 
   %title
     Hello, world!

@@ -16,7 +16,7 @@ RSpec.describe BlogPostsController, type: :controller do
     context 'without blog posts' do
       it 'should be possible to visit index' do
         get :index
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
     end # context 'without blog posts'
@@ -32,13 +32,13 @@ RSpec.describe BlogPostsController, type: :controller do
 
       it 'should be possible to visit index' do
         get :index
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it 'should only display the first 25' do
         get :index
-        blog_posts[0..25].each do |post|
-          expect(response.body).to include("blog_post/#{post.id}")
+        blog_posts[0..24].each do |post|
+          expect(response.body).to include("blog_posts/#{post.id}")
         end
       end
 

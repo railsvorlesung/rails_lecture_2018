@@ -1,0 +1,36 @@
+.container
+  .row
+    %h2= @book.title
+    %p= @book.summary
+
+
+  .row
+    %h2= BookChapter.model_name.human(:count => 2)
+    
+    .panel-group#accordion{role: "tablist", 'aria-multiselectable' => "true"}
+      - @book.book_chapters.each do |chapter|
+        .panel.panel-default
+          .panel-heading{role: "tab", id: dom_id(chapter)}
+            %h4.panel-title
+              %a{role: "button", 'data-toggle' => "collapse", 'data-parent' => "#accordion", href: "##{dom_id(chapter, :collapse)}", 'aria-expanded' => "true", 'aria-controls' => dom_id(chapter, :collapse)}
+                = chapter.title
+
+          .panel-collapse.collapse{role: "tabpanel", "aria-labelledby" => dom_id(chapter), id: dom_id(chapter, :collapse)}
+            .panel-body
+              .row
+                .col-md-6
+                  %h5= BookChapter.human_attribute_name(:authors)
+                  %ul
+                    - chapter.authors.each do |author|
+                      %li= author.email
+
+                .col-md-6
+                  %h5= BookChapter.human_attribute_name(:reviewers)
+                  %ul
+                    - chapter.reviewers.each do |reviewer|
+                      %li= reviewer.email
+
+  .row
+    %center
+      = link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary'
+      = link_to 'Back', books_path, class: 'btn'
