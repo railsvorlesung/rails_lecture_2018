@@ -16,10 +16,10 @@
           .container
             .row
               .col-md-1
-                - if @post.image.attachment.present?
-                  %img{src: url_for(@post.image.variant(resize: "100x100"))}
-                - else
-                  // example image
+                - if @post.image.present?
+                  %img{src: @post.image.url}
+                -#- if @post.image.attachment.present?
+                  -#%img{src: url_for(@post.image.variant(resize: "100x100"))}
               .col-md-6
                 = f.file_field :image
         .form-group.btn

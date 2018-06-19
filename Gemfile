@@ -31,7 +31,12 @@ gem 'cookieconsent'
 gem 'simple_form'
 
 gem 'flag_shih_tzu'
+
+
+gem 'paperclip'
+
 gem 'aws-sdk-s3'
+gem 'fog'
 
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
